@@ -27,6 +27,20 @@ radial-gradient(circle at 50% 80%, #10b98155, transparent 25%);
 animation:moveBg 10s infinite alternate ease-in-out;
 }
 
+@keyframes floatGlow{
+
+0%{
+transform:translateY(0px)
+translateX(0px);
+}
+
+100%{
+transform:translateY(100px)
+translateX(-50px);
+}
+
+}
+
 @keyframes moveBg{
 0%{
 transform:scale(1);
