@@ -1,66 +1,266 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EcoTrack - Carbon Footprint Awareness Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonSphere | Climate Intelligence Platform</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<header>
-    <h1>🌱 EcoTrack</h1>
-    <p>Understand, Track & Reduce Your Carbon Footprint</p>
-</header>
+</head><body><div class="background-blur"></div><nav class="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-earth-asia"></i>
+        CarbonSphere
+    </div><div class="nav-actions">
+    <button id="themeBtn">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+</div>
 
-<div class="container">
+</nav><section class="hero"><div class="hero-content">
 
-    <div class="card">
-        <h2>Carbon Footprint Calculator</h2>
+    <h1>
+        Track Your Impact.
+        <br>
+        Protect Our Planet.
+    </h1>
 
-        <label>Monthly Electricity Usage (kWh)</label>
-        <input type="number" id="electricity" placeholder="Enter units">
+    <p>
+        CarbonSphere helps you calculate, analyze,
+        and reduce your carbon footprint through
+        intelligent sustainability insights.
+    </p>
 
-        <label>Vehicle Travel (km/month)</label>
-        <input type="number" id="vehicle" placeholder="Enter km">
+    <div class="hero-buttons">
+        <a href="#calculator" class="primary-btn">
+            Calculate Now
+        </a>
 
-        <label>LPG Cylinders Used (per month)</label>
-        <input type="number" id="lpg" placeholder="Enter cylinders">
-
-        <button onclick="calculateFootprint()">Calculate</button>
-    </div>
-
-    <div class="card result">
-        <h2>Your Carbon Footprint</h2>
-        <h1 id="result">0 kg CO₂</h1>
-        <p id="rating"></p>
-
-        <div class="progress-container">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
-
-        <p id="target"></p>
-    </div>
-
-    <div class="card">
-        <h2>Personalized Suggestions</h2>
-        <ul id="suggestions">
-            <li>Calculate your footprint to get suggestions.</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h2>Daily Eco Tip</h2>
-        <p id="ecoTip">Click the button below.</p>
-        <button onclick="generateTip()">Get Eco Tip</button>
+        <a href="#dashboard" class="secondary-btn">
+            Explore Dashboard
+        </a>
     </div>
 
 </div>
 
-<footer>
-    Made with ❤️ for a Sustainable Future
-</footer>
+</section><section class="stats-section"><div class="stat-card">
+    <h2 id="usersCounter">1000+</h2>
+    <p>Eco Users Inspired</p>
+</div>
 
-<script src="script.js"></script>
-</body>
+<div class="stat-card">
+    <h2 id="treesCounter">500+</h2>
+    <p>Trees Equivalent Saved</p>
+</div>
+
+<div class="stat-card">
+    <h2 id="carbonCounter">10000+</h2>
+    <p>kg CO₂ Tracked</p>
+</div>
+
+</section><section id="calculator" class="container"><div class="glass-card">
+
+    <h2>
+        <i class="fa-solid fa-calculator"></i>
+        Carbon Footprint Calculator
+    </h2>
+
+    <label>Electricity Usage (kWh / Month)</label>
+    <input type="number" id="electricity">
+
+    <label>Vehicle Travel (km / Month)</label>
+    <input type="number" id="vehicle">
+
+    <label>LPG Cylinders (Monthly)</label>
+    <input type="number" id="lpg">
+
+    <label>Flights Per Year</label>
+    <input type="number" id="flights">
+
+    <button onclick="calculateFootprint()">
+        Calculate Footprint
+    </button>
+
+</div>
+
+<div class="glass-card result-card">
+
+    <h2>Your Carbon Footprint</h2>
+
+    <h1 id="result">
+        0 kg CO₂
+    </h1>
+
+    <h3 id="ecoScore">
+        Eco Score: 0/100
+    </h3>
+
+    <p id="rating"></p>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <p id="targetText"></p>
+
+</div>
+
+</section><section class="container"><div class="glass-card">
+
+    <h2>
+        <i class="fa-solid fa-tree"></i>
+        Tree Offset Calculator
+    </h2>
+
+    <h1 id="treeCount">0 Trees</h1>
+
+    <p>
+        Trees required annually to offset your emissions.
+    </p>
+
+    <div id="forestView" class="forest-view"></div>
+
+</div>
+
+<div class="glass-card">
+
+    <h2>
+        <i class="fa-solid fa-award"></i>
+        Achievement Badges
+    </h2>
+
+    <div class="badges">
+
+        <span class="badge">
+            🏅 First Calculation
+        </span>
+
+        <span class="badge">
+            🌱 Eco Beginner
+        </span>
+
+        <span class="badge">
+            🌳 Green Hero
+        </span>
+
+        <span class="badge">
+            ♻ Planet Protector
+        </span>
+
+    </div>
+
+</div>
+
+</section><section id="dashboard" class="container"><div class="glass-card full-width">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Carbon Analytics Dashboard
+    </h2>
+
+    <canvas id="carbonChart"></canvas>
+
+</div>
+
+</section><section class="container"><div class="glass-card">
+
+    <h2>
+        <i class="fa-solid fa-lightbulb"></i>
+        Daily Eco Tip
+    </h2>
+
+    <p id="ecoTip">
+        Click below to receive a sustainability tip.
+    </p>
+
+    <button onclick="generateTip()">
+        Generate Tip
+    </button>
+
+</div>
+
+<div class="glass-card">
+
+    <h2>
+        <i class="fa-solid fa-list-check"></i>
+        Sustainability Challenges
+    </h2>
+
+    <ul class="challenge-list">
+
+        <li>
+            <input type="checkbox">
+            No Car Day
+        </li>
+
+        <li>
+            <input type="checkbox">
+            Save Water Challenge
+        </li>
+
+        <li>
+            <input type="checkbox">
+            Plastic Free Week
+        </li>
+
+        <li>
+            <input type="checkbox">
+            Plant One Tree
+        </li>
+
+    </ul>
+
+</div>
+
+</section><section class="container"><div class="glass-card full-width">
+
+    <h2>
+        <i class="fa-solid fa-robot"></i>
+        EcoBot Assistant
+    </h2>
+
+    <input
+    type="text"
+    id="question"
+    placeholder="Ask EcoBot anything...">
+
+    <button onclick="askBot()">
+        Ask EcoBot
+    </button>
+
+    <div id="answer" class="chat-answer">
+        Hello! Ask me how to reduce your footprint.
+    </div>
+
+</div>
+
+</section><section class="container"><div class="glass-card full-width">
+
+    <h2>
+        <i class="fa-solid fa-globe"></i>
+        Future Earth Simulator
+    </h2>
+
+    <div id="futureEarth">
+
+        Calculate your footprint to see
+        your future climate impact.
+
+    </div>
+
+</div>
+
+</section><footer><h3>CarbonSphere</h3>
+
+<p>
+    Built for Climate Awareness,
+    Sustainability & Environmental Action.
+</p>
+
+</footer><script src="script.js"></script></body>
 </html>
