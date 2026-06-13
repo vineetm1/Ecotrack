@@ -44,14 +44,18 @@ transform:scale(1.2);
 
 .background-blur{
 position:fixed;
-width:500px;
-height:500px;
-background:#22c55e;
-filter:blur(180px);
-opacity:.2;
-top:-150px;
-right:-150px;
+width:700px;
+height:700px;
+background:
+radial-gradient(circle,
+rgba(34,197,94,.8) 0%,
+rgba(59,130,246,.5) 40%,
+transparent 75%);
+top:-200px;
+right:-200px;
 z-index:-1;
+animation:floatGlow 8s ease-in-out infinite alternate;
+filter:blur(80px);
 }
 
 .navbar{
